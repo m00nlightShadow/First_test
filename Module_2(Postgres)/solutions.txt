@@ -3,7 +3,7 @@ SELECT CONCAT(
     (CASE
     WHEN gender = 'm' THEN 'he '
     ELSE 'she '
-    END)
+    END),
     'has email ', email)
 AS info 
 FROM staff;
