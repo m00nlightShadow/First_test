@@ -1,0 +1,21 @@
+SELECT CONCAT
+    ('This is ', name, ', ',
+        (CASE
+        WHEN gender = 'm' THEN 'he '
+        ELSE 'she '
+        END)
+    'has email ', email) AS info FROM staff;
+
+
+SELECT 'We have ' || COUNT(*) || ' boys!' AS "Gender information:"
+FROM staff
+WHERE gender = 'm'
+UNION
+SELECT 'We have ' || COUNT(*) || ' girls!' AS "Gender information:"
+FROM staff
+WHERE gender = 'f';
+
+
+SELECT name, COUNT(vocabulary_id) AS words
+FROM word
+INNER JOIN vocabulary ON(vocabulary.id = vocabulary_id) GROUP BY name, vocabulary_id;
